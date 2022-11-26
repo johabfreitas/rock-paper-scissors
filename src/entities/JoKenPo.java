@@ -18,12 +18,12 @@ public record JoKenPo(
 				System.out.println("\nINVALID MOVE! (1, 2 OR 3): ");
 				System.out.println("\tPOINT TO " + IA.getName() + "\n");
 				IA.incrementScore();
-				// continue;
+				continue;
 			}
 			
 			int choiceia = choiceIA();
 			
-			System.out.println("\n" + choiceuser + " X " + choiceia);
+			System.out.println("\n" + user.getName() + " " + choiceuser + " X " + choiceia + " " + IA.getName());
 			
 			int result = choiceuser - choiceia;
 			
@@ -46,6 +46,8 @@ public record JoKenPo(
 			
 			System.out.println("\t\tWINNER = " + finalWinner.toUpperCase());
 		}
+		
+		System.out.println("\n**************************************\n");
 	}
 	
 	private void winnerRound(int result) {
@@ -61,6 +63,7 @@ public record JoKenPo(
 				winnerRound = user().getName();
 			}
 		}
+		System.out.println("\nWinner Round: " + winnerRound + "\n");
 	}
 	
 	private int choiceIA() {

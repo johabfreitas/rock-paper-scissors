@@ -11,6 +11,7 @@ public class App {
 		
 		JoKenPo jokenpo = startGame();
 		jokenpo.toPlay();
+		jokenpo.showFinalResult();
 	}
 
 	@SuppressWarnings("resource")
