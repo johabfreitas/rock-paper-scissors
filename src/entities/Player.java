@@ -28,5 +28,9 @@ public class Player {
 	public void setScore(Integer score) {
 		this.score = score;
 	}
+	
+	public void incrementScore() {
+		setScore(getScore() +1);
+	}
 
 }

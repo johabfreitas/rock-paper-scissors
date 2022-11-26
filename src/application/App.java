@@ -9,8 +9,8 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		startGame();
-		
+		JoKenPo jokenpo = startGame();
+		jokenpo.toPlay();
 	}
 
 	public static JoKenPo startGame() {
@@ -26,8 +26,6 @@ public class App {
 
 		System.out.print(playerName + ", enter how many rounds you want to play: ");
 		int rounds = sc.nextInt();
-		
-		sc.close();
 		
 		return new JoKenPo(user, IA, rounds);
 	}
