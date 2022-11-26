@@ -42,7 +42,7 @@ public record JoKenPo(
 		if(finalScoreUser == finalScoreIA) {
 			System.out.println("\t\t\tDRAW!");
 		} else {
-			String finalWinner = (finalScoreUser > finalScoreIA) ? IA.getName() : user.getName();
+			String finalWinner = (finalScoreUser > finalScoreIA) ? user.getName() : IA.getName();
 			
 			System.out.println("\t\tWINNER = " + finalWinner.toUpperCase());
 		}
