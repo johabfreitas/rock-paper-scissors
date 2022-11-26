@@ -32,5 +32,4 @@ public class Player {
 	public void incrementScore() {
 		setScore(getScore() +1);
 	}
-
 }

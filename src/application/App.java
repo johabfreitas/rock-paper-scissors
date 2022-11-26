@@ -13,6 +13,7 @@ public class App {
 		jokenpo.toPlay();
 	}
 
+	@SuppressWarnings("resource")
 	public static JoKenPo startGame() {
 		System.out.println("******** Jo-Ken-Po ********\n");
 		Scanner sc = new Scanner(System.in);

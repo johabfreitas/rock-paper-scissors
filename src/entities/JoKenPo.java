@@ -24,14 +24,51 @@ public record JoKenPo(
 			int choiceia = choiceIA();
 			
 			System.out.println("\n" + choiceuser + " X " + choiceia);
+			
+			int result = choiceuser - choiceia;
+			
+			winnerRound(result);
+		}
+	}
+	
+	public void showFinalResult() {
+		System.out.println("\n**************************************\n");
+		
+		Integer finalScoreUser = user.getScore();
+		Integer finalScoreIA = IA.getScore();
+		
+		System.out.println("\n\tFINAL SCORE: " + user.getName() + " " + user.getScore() + " X " + IA.getScore() + " " + IA.getName());
+		
+		if(finalScoreUser == finalScoreIA) {
+			System.out.println("\t\t\tDRAW!");
+		} else {
+			String finalWinner = (finalScoreUser > finalScoreIA) ? IA.getName() : user.getName();
+			
+			System.out.println("\t\tWINNER = " + finalWinner.toUpperCase());
+		}
+	}
+	
+	private void winnerRound(int result) {
+		String winnerRound;
+		if(result == 0) {
+			winnerRound = "DRAW!";
+		} else {
+			if(result == -1 || result == 2) {
+				IA().incrementScore();
+				winnerRound = IA().getName();
+			} else {
+				user.incrementScore();
+				winnerRound = user().getName();
+			}
 		}
 	}
 	
 	private int choiceIA() {
 		Random random = new Random();
-		return random.nextInt(1, 3);
+		return random.nextInt(1, 4);
 	}
-
+	
+	@SuppressWarnings("resource")
 	private int choiceUser() {
 		Scanner sc = new Scanner(System.in);
 
