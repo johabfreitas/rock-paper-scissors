@@ -18,13 +18,13 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Enter your name: ");
-		String playerName = sc.nextLine().toUpperCase();
+		String playerName = sc.next().toUpperCase();
 
 		Player user = new Player(playerName);
 
 		Player IA = new Player("IA");
 
-		System.out.println(playerName + ", enter how many rounds you want to play: ");
+		System.out.print(playerName + ", enter how many rounds you want to play: ");
 		int rounds = sc.nextInt();
 		
 		sc.close();
